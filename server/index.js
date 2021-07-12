@@ -6,7 +6,7 @@ import mongoose from "mongoose";
 import postRoutes from './routes/posts.js';
 
 const app = express();
-
+//localhost:5000/posts
 app.use('/posts', postRoutes);
 
 app.use(bodyParser.json({ limit: "30mb", extended: true })); //limit size of images
