@@ -6,14 +6,16 @@ import mongoose from "mongoose";
 import postRoutes from './routes/posts.js';
 
 const app = express();
-//localhost:5000/posts
-app.use('/posts', postRoutes);
-
-app.use(bodyParser.json({ limit: "30mb", extended: true })); //limit size of images
-app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
+//localhost:5000/posts
 
-const CONNECTION_URL = 'mongodb+srv://admin:admin@cluster0.z9hun.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+
+app.use(bodyParser.json({ limit: '30mb', extended: true }))
+app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }))
+
+
+app.use('/posts', postRoutes);
+const CONNECTION_URL = 'mongodb+srv://admin:admin@cluster0.tqbny.mongodb.net/moments?retryWrites=true&w=majority';
 
 const PORT = process.env.PORT || 5000;
 
