@@ -12,16 +12,20 @@ app.use(cors());
 //localhost:5000/posts
 
 
-
+const PORT = process.env.PORT || 5000;
 app.use(bodyParser.json({ limit: '30mb', extended: true }))
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }))
 
 
 app.use('/posts', postRoutes);
 
+app.get('/', (req, res) => {
+    res.send('Welcome to Capture moments API');
+})
+
 
 mongoose.connect(process.env.CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => app.listen(process.env.PORT, () => console.log(`Server running on port : ${process.env.PORT}`)))
+    .then(() => app.listen(PORT, () => console.log(`Server running on port : ${PORT}`)))
     .catch((error) => console.log(error.message));
 
 mongoose.set('useFindAndModify', false);
