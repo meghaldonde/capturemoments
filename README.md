@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Download and run 'npm i' on console to install necesary packages.
+Download and run 'client/npm i', 'server/npm i' on console to install necesary packages.
 
 ### `npm start`
 
