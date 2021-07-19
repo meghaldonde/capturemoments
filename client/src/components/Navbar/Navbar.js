@@ -8,12 +8,11 @@ import * as actionType from '../../constants/actionTypes';
 import useStyles from './styles';
 
 const Navbar = () => {
-    const classes = useStyles();
-    const dispatch = useDispatch();
-    const history = useHistory();
-    const location = useLocation();
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
-    console.log(user);
+    const dispatch = useDispatch();
+    const location = useLocation();
+    const history = useHistory();
+    const classes = useStyles();
 
     const logout = () => {
         dispatch({ type: actionType.LOGOUT });
@@ -22,7 +21,6 @@ const Navbar = () => {
 
         setUser(null);
     };
-
 
     useEffect(() => {
         const token = user?.token;
@@ -40,9 +38,8 @@ const Navbar = () => {
     return (
         <AppBar className={classes.appBar} position="static" color="inherit">
             <div className={classes.brandContainer}>
-                <Typography component={Link} to="/" className={classes.heading} variant="h3" align="center">
+                <Typography component={Link} to="/" className={classes.heading} variant="h4" align="center">
                     Travel Moments
-                    <img className={classes.image} src={moments} alt="moments" height="60" />
                 </Typography>
             </div>
             <Toolbar className={classes.toolbar}>
