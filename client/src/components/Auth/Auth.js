@@ -89,7 +89,7 @@ const Auth = () => {
                     </Button>
 
                     <GoogleLogin
-                        clientId="CLIENTID"
+                        clientId="CLIENT_ID"
                         render={(renderProps) => (
                             <Button className={classes.googleButton}
                                 color="primary"
